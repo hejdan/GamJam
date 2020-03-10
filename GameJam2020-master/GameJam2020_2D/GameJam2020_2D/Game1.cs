@@ -101,8 +101,11 @@ namespace GameJam2020_2D
                     inGame.Update(gameTime);
                     if (inGame.player.playerAlive == false)
                     {
-                        menuManager.ChangePage(MenuManager.MenuState.GameOver);
-                        menuManager.gameStates = GameStates.Menu;
+                        if(inGame.player.lifes <= 0) {
+                            menuManager.ChangePage(MenuManager.MenuState.GameOver);
+                            menuManager.gameStates = GameStates.Menu;
+                            inGame.player.lifes = 5;
+                        }
                         inGame.player.playerAlive = true;
                         inGame.player.ResetGame();
                     }

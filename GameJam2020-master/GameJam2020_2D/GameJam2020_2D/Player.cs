@@ -25,6 +25,8 @@ namespace GameJam2020_2D
         // Previous position // Olle A 20-02-12
         private int prevTilePosition;
 
+        public int lifes = 5;
+
         Highscore scoreboard;
         string playerName;
 
@@ -202,7 +204,7 @@ namespace GameJam2020_2D
                 }
 
                 else if (lastGamePadState.IsButtonDown(Buttons.DPadDown) || keyRepeatTime < 0)
-                {
+                {   
                     keyRepeatTime = keyRepeatDelay;
                     //do key logic // Emil C.A. 200212
                     movement += 1;
@@ -234,7 +236,42 @@ namespace GameJam2020_2D
 
         public void ResetGame()
         {
-            InGame.Level = InGame.Levels.preLevel1;
+            switch (InGame.Level)
+            {
+                case InGame.Levels.Level1:
+                    InGame.Level = InGame.Levels.preLevel1;
+                    break;
+
+                case InGame.Levels.Level2:
+                    InGame.Level = InGame.Levels.preLevel2;
+                    break;
+
+                case InGame.Levels.Level3:
+                    InGame.Level = InGame.Levels.preLevel3;
+                    break;
+
+                case InGame.Levels.Level4:
+                    InGame.Level = InGame.Levels.preLevel4;
+                    break;
+
+                case InGame.Levels.Level5:
+                    InGame.Level = InGame.Levels.preLevel5;
+                    break;
+
+                case InGame.Levels.Level6:
+                    InGame.Level = InGame.Levels.preLevel6;
+                    break;
+
+                case InGame.Levels.Level7:
+                    InGame.Level = InGame.Levels.preLevel7;
+                    break;
+
+                case InGame.Levels.Level8:
+                    InGame.Level = InGame.Levels.preLevel8;
+                    break;
+            }
+            // InGame.Level = InGame.Levels.preLevel1;
+            lifes -= 1;
         }
 
         /// <summary>

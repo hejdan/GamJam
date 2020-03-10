@@ -381,6 +381,9 @@ namespace GameJam2020_2D
 
         public void Draw(SpriteBatch spriteBatch ,GameTime gameTime)
         {
+
+            spriteBatch.DrawString(scoreFont, "Life:", new Vector2(50, 50), Color.White);
+
             // Level specific code // Olle A 200212
             switch (Level)
             {
