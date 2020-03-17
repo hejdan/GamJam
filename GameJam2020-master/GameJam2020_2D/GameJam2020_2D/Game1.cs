@@ -23,6 +23,7 @@ namespace GameJam2020_2D
         public static MenuManager menuManager;
         private InGame inGame;
         public static GameStates gameState;
+        public Highscore highscore;
         Highscore scoreBoard;
         /// <summary>
         /// The nameselect class used to allow a player to create their own name and then store it for use regarding the high score 
@@ -53,7 +54,7 @@ namespace GameJam2020_2D
             menuManager.gameStates = GameStates.Menu;
             inGame = new InGame(scoreBoard, menuManager);
             inGame.Initialize();
-
+            highscore = new Highscore();
             Window.Title = "Weird tiles in space";
 
             base.Initialize();
@@ -71,6 +72,9 @@ namespace GameJam2020_2D
             menuManager.LoadMenues(Content);
             inGame.LoadContent(Content);
             nameSelect.LoadContent(Content);
+
+            highscore.Content(Content);
+            scoreBoard.Content(Content);
         }
 
         /// <summary>
@@ -101,7 +105,7 @@ namespace GameJam2020_2D
                     inGame.Update(gameTime);
                     if (inGame.player.playerAlive == false)
                     {
-                        if(inGame.player.lifes <= 0) {
+                        if(inGame.player.lifes <= 1) {
                             menuManager.ChangePage(MenuManager.MenuState.GameOver);
                             menuManager.gameStates = GameStates.Menu;
                             inGame.player.lifes = 5;

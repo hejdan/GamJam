@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Microsoft.Xna.Framework.Content;
 namespace Tools_XNA
 {
     public class Highscore
@@ -15,6 +15,7 @@ namespace Tools_XNA
         private Vector2 scorePosition = new Vector2(3, 60);
         private Vector2 scoreFontSpace = new Vector2(0, 40);
 
+        SpriteFont font;
 
         // Variables for Score, Name and ArrayIdentity | Julius 18-12-09
         private float playerScore;
@@ -97,6 +98,11 @@ namespace Tools_XNA
 
         }
 
+        public void Content(ContentManager Content)
+        {
+            font = Content.Load<SpriteFont>(@"Shared/Fonts/Main");
+        }
+
         // Function for easily saving score and sorting it | Julius 18-12-09
         public void SaveHighScore(int level, string name, float time)
         {
@@ -176,14 +182,14 @@ namespace Tools_XNA
         }
 
 
-        public void Draw(SpriteBatch spriteBatch, SpriteFont scoreFont)
+        public void Draw(SpriteBatch spriteBatch)
         {
             // Draw date and score on highscore list | Julius 18-12-09
 
 
             if (LoadData(Filename).Time[0] == 100009)
             {
-                spriteBatch.DrawString(scoreFont, "Play to get a score", scorePosition + scoreFontSpace, Color.White);
+                spriteBatch.DrawString(font, "Play to get a score", scorePosition + scoreFontSpace, Color.White);
             }
             else
             {
@@ -191,8 +197,8 @@ namespace Tools_XNA
                 for (int i = 0; i < arrayLeangth; i++)
                 {
                     // if score is more than 0 blobs, then draw the score on screen | Julius 18-12-09
-                    spriteBatch.DrawString(scoreFont, "Level: " + (LoadData(Filename).Level[i] + 1), scorePosition + (3 * i + 1) * scoreFontSpace, Color.White);
-                    spriteBatch.DrawString(scoreFont, "Time: " + LoadData(Filename).Time[i] + " Seconds", scorePosition + (3 * i) * scoreFontSpace, Color.White);
+                    spriteBatch.DrawString(font, "Level: " + (LoadData(Filename).Level[i] + 1), scorePosition + (3 * i + 1) * scoreFontSpace, Color.White);
+                    spriteBatch.DrawString(font, "Time: " + LoadData(Filename).Time[i] + " Seconds", scorePosition + (3 * i) * scoreFontSpace, Color.White);
                 }
 
                 //for (int i = 0; i < arrayLeangth; i++)

@@ -148,7 +148,7 @@ namespace jekyll
         Vector2 scoreFontSpace = new Vector2(0, 30);
         Vector2 scoreY = new Vector2(0, 1);
         Vector2 scoreX = new Vector2(1, 0);
-        SpriteFont scoreFont;
+        public static SpriteFont scoreFont;
         SpriteFont scoreFontTitle;
 
 

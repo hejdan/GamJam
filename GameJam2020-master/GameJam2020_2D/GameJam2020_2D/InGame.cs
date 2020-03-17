@@ -19,6 +19,8 @@ namespace GameJam2020_2D
     {
         public Player player;
         public static string playerName = "AAA";
+        public static SpriteFont font;
+        
 
         TilesMap level1;
         TilesMap level2;
@@ -249,6 +251,8 @@ namespace GameJam2020_2D
                 content.Load<Texture2D>("Textures/Player/MageSpriteFaceViewLeft"),
                 content.Load<Texture2D>("Textures/Player/MageSpriteBackViewRight"),
                 level1, scoreboard, playerName);
+
+            font = content.Load<SpriteFont>(@"Shared/Fonts/Main");
         }
 
         public void Update(GameTime gameTime)
@@ -382,7 +386,7 @@ namespace GameJam2020_2D
         public void Draw(SpriteBatch spriteBatch ,GameTime gameTime)
         {
 
-            spriteBatch.DrawString(scoreFont, "Life:", new Vector2(50, 50), Color.White);
+            spriteBatch.DrawString(font, "Life:" + player.lifes.ToString(), new Vector2(1280 - 150, 0 + 20), Color.White);
 
             // Level specific code // Olle A 200212
             switch (Level)
