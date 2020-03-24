@@ -108,12 +108,37 @@ namespace GameJam2020_2D
                         if(inGame.player.lifes <= 1) {
                             menuManager.ChangePage(MenuManager.MenuState.GameOver);
                             menuManager.gameStates = GameStates.Menu;
-                            inGame.player.lifes = 5;
+                            inGame.player.lifes = 6;
                         }
                         inGame.player.playerAlive = true;
                         inGame.player.ResetGame();
                     }
                     break;
+                    
+
+
+
+
+
+                    /////////////
+                    ////////////
+                    ///////////
+                    //////////
+                    /////////
+                    ////////
+                    ///////
+                    //////
+                    /////
+                    ////
+                    ///
+                    //
+
+
+
+
+
+
+
                 //case GameStates.InsertName:
                 //    // Updates the various code in the nameselect class 
                 //    nameSelect.Update(gameTime);

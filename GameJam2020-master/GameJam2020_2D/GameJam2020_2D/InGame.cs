@@ -20,7 +20,6 @@ namespace GameJam2020_2D
         public Player player;
         public static string playerName = "AAA";
         public static SpriteFont font;
-        
 
         TilesMap level1;
         TilesMap level2;
