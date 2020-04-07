@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Tools_XNA;
 using static Tools_XNA.Tiles;
+using static Tools_XNA.Highscore;
 
 namespace GameJam2020_2D
 {

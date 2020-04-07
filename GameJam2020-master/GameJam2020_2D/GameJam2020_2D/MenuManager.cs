@@ -6,7 +6,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
-namespace Tools_XNA
+using Tools_XNA;
+using static Tools_XNA.Highscore;
+using static Tools_XNA.Tiles;
+namespace GameJam2020_2D
 {
     public class MenuManager
     {
@@ -109,7 +112,7 @@ namespace Tools_XNA
             
             menu.Pages[(int)MenuState.LevelSelect].AddBackground(defaultBackground);
             menu.Pages[(int)MenuState.LevelSelect].AddButtonList_Single(menuFont, new Vector2(screenWidth / 10, screenHeight / 5), 80f, new[] { "Level 1", "Level 2", "Level 3", "Level 4", "Back" },
-                new Action[] { () => gameStates = GameStates.Game, () => ChangePage(MenuState.Main), () => ChangePage(MenuState.Main), () => ChangePage(MenuState.Main), () => ChangePage(MenuState.Main) });
+                new Action[] { () => gameStates = GameStates.Game, () => InGame.Level = InGame.Levels.preLevel2, () => ChangePage(MenuState.Main), () => ChangePage(MenuState.Main), () => ChangePage(MenuState.Main) });
 
             menu.Pages[(int)MenuState.HighscoreBoard].AddBackground(defaultBackground);
             menu.Pages[(int)MenuState.HighscoreBoard].AddButton_Single(menuFont, new Vector2(80, 660), "Back", () => ChangePage(MenuState.Main));

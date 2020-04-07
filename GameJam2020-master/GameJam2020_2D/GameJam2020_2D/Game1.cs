@@ -114,30 +114,6 @@ namespace GameJam2020_2D
                         inGame.player.ResetGame();
                     }
                     break;
-                    
-
-
-
-
-
-                    /////////////
-                    ////////////
-                    ///////////
-                    //////////
-                    /////////
-                    ////////
-                    ///////
-                    //////
-                    /////
-                    ////
-                    ///
-                    //
-
-
-
-
-
-
 
                 //case GameStates.InsertName:
                 //    // Updates the various code in the nameselect class 
